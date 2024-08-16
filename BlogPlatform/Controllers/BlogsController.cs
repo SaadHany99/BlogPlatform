@@ -33,7 +33,6 @@ namespace BlogPlatform.Controllers
         public async Task<ActionResult> CreatePost(BlogPost blog)
         {
             await service.AddBlogPost(blog);
-            //nameof(GetBlogPost), new { id = blogPost.Id }, blogPost
             return CreatedAtAction(nameof(BlogPost), new { id = blog.Id }, blog);
         }
 
